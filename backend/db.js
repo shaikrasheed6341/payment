@@ -14,7 +14,7 @@ async function main() {
 }
 
 const userSchema = new Schema({
-  firstname: {
+  fristname: {
     type: String,
     required: [true, "First name is required"],
     trim: true,
