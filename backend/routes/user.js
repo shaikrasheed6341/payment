@@ -83,8 +83,10 @@ router.post('/signin', async (req, res) => {
         }
 
        
-        
-
+        userid = user._id;  
+        const token = jwt.sign({
+            userid
+        }, JWT_SECRET)
         return res.status(200).json({
             message: "User signed in successfully",
             token: token
@@ -95,5 +97,6 @@ router.post('/signin', async (req, res) => {
         });
     }
 });
+
 
 module.exports = router;
